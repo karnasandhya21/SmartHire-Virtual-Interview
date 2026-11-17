@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartHire - Virtual Interview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SmartHire</h1>
+        <p>Your Virtual Interview Partner</p>
+    </header>
+
+    <section class="container">
+        <h2>Welcome to SmartHire!</h2>
+        <p>Practice interviews and improve your skills.</p>
+
+        <h3>Select Interview Category</h3>
+
+        <select id="category">
+            <option value="HR">HR Interview</option>
+            <option value="Python">Python Interview</option>
+            <option value="Java">Java Interview</option>
+            <option value="AIML">AIML Interview</option>
+        </select>
+
+        <button onclick="startInterview()">Start Interview</button>
+
+        <div id="interview">
+            <h3 id="question">Your question will appear here.</h3>
+
+            <textarea id="answer"
+            placeholder="Type your answer here..."></textarea>
+
+            <button onclick="nextQuestion()">Next Question</button>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
