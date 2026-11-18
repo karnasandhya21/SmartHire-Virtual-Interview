@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SmartHire - Virtual Interview</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartHire Pro</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>SmartHire</h1>
-        <p>Your Virtual Interview Partner</p>
-    </header>
-
-    <section class="container">
-        <h2>Welcome to SmartHire!</h2>
-        <p>Practice interviews and improve your skills.</p>
-
-        <h3>Select Interview Category</h3>
-
-        <select id="category">
-            <option value="HR">HR Interview</option>
-            <option value="Python">Python Interview</option>
-            <option value="Java">Java Interview</option>
-            <option value="AIML">AIML Interview</option>
-        </select>
-
-        <button onclick="startInterview()">Start Interview</button>
-
-        <div id="interview">
-            <h3 id="question">Your question will appear here.</h3>
-
-            <textarea id="answer"
-            placeholder="Type your answer here..."></textarea>
-
-            <button onclick="nextQuestion()">Next Question</button>
-        </div>
-
-    </section>
-
-    <script src="script.js"></script>
+<header><h1>SmartHire Pro</h1><p>Your Virtual Interview Partner</p></header>
+<div class="container">
+  <div class="card" id="loginCard">
+    <h2>Welcome!</h2>
+    <input type="text" id="studentName" placeholder="Enter Your Name">
+    <select id="category">
+      <option value="hr">HR Interview</option>
+      <option value="python">Python Interview</option>
+      <option value="java">Java Interview</option>
+      <option value="aiml">AIML Interview</option>
+    </select>
+    <button onclick="startInterview()">Start Interview</button>
+  </div>
+  <div class="card hidden" id="quizCard">
+    <p id="welcomeUser"></p>
+    <p id="timer">Time: 60s</p>
+    <h3 id="questionText">Question</h3>
+    <input type="text" id="answerInput" placeholder="Type your answer...">
+    <br>
+    <button onclick="speakQuestion()" style="background:#059669">🔊 Listen Question</button>
+    <button onclick="startVoice()" style="background:#dc2626">🎤 Speak Answer</button>
+    <p id="voiceStatus"></p>
+    <p id="feedback"></p>
+    <button onclick="nextQuestion()">Next Question</button>
+    <p id="scoreText">Score: 0</p>
+  </div>
+  <div class="card hidden" id="resultCard">
+    <h2>Completed!</h2>
+    <h1 id="finalScore"></h1>
+    <p id="finalMsg"></p>
+    <button onclick="location.reload()">Try Again</button>
+  </div>
+</div>
+<footer><p>© 2026 SmartHire | Practice. Improve. Get Hired.</p></footer>
+<script src="script.js"></script>
 </body>
 </html>
